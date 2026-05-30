@@ -49,7 +49,7 @@ if (ENV.NODE_ENV === "production")
 // and sends it.
   app.get("/{*any}", (req, res) => { //means:for any route not matched above:
     res.sendFile(
-      path.resolve(__dirname, "../frontend" ,{/*go one folder up in frontend */}, "dist", "index.html")//This sends: frontend/dist/index.html to browser
+      path.resolve(__dirname, "../frontend" , "dist", "index.html")//This sends: frontend/dist/index.html to browser ,{/*go one folder up in frontend */}
     );
   });
 }
