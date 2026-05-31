@@ -5,6 +5,7 @@ import { connectDB } from "./lib/db.js";
 import {serve} from "inngest/express"
 import cors from "cors"
 import { inngest,functions } from "./lib/inngest.js";
+import { chatClient } from "./lib/stream.js";
 const app = express();
 
 const __dirname = path.resolve();//gives current project root path
