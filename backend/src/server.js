@@ -6,25 +6,25 @@ import {serve} from "inngest/express"
 import cors from "cors"
 import { inngest,functions } from "./lib/inngest.js";
 import { chatClient } from "./lib/stream.js";
+import { clerkMiddleware } from "@clerk/express";
+import chatRoutes from "./routes/chatRoutes.js";
 const app = express();
 
-const __dirname = path.resolve();//gives current project root path
-//C:\Users\advit\OneDrive\ドキュメント\mock-interview project\backend
 
 app.use(express.json());
 app.use(cors({origin:ENV.CLIENT_URL,credentials:true}));
 //credentials?server allows browser to include cookies on request
-app.use("/api/inngest",serve({client:inngest,functions}))
+app.use(clerkMiddleware());//this add auth fields to request object: req.auth()
+app.use("/api/inngest",serve({client:inngest,functions}));
+app.use("/api/chat",chatRoutes);
 // API route
 app.get("/api", (req, res) => {
   res.status(200).json({
     message: "success from api now hehhe",
   });
 });
-// app.get("/api/test-stream-users", async (req, res) => {
-//   const { users } = await chatClient.queryUsers({});
-//   res.json(users);
-// });
+//When you pass an array of middleware to Express, it automatically flattens and executes them sequentially
+
 
 connectDB().then(()=>{
   app.listen(ENV.PORT, () =>//starting server
