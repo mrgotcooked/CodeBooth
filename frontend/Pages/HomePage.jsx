@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router";
 import {
   CheckIcon,
-  SparklesIcon,
   ZapIcon,
   ArrowRightIcon,
   VideoIcon,
@@ -10,6 +9,7 @@ import {
   UsersIcon,
   Mic,
   Volume2,
+  Aperture,
 } from "lucide-react";
 import { SignInButton } from "@clerk/clerk-react";
 
@@ -32,8 +32,9 @@ function HomePage() {
             to={"/"}
             className="flex items-center gap-3 group transition-all"
           >
-            <div className="size-11 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-xl shadow-primary/20 group-hover:scale-105 transition-all">
-              <SparklesIcon className="size-5 text-white" />
+            <div className="size-11 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center ">
+              {/* <SparklesIcon className="size-5 text-white" /> */}
+              <Aperture className="size-7 text-white transition-transform duration-300 group-hover:animate-[spin_4s_linear_infinite]"/>
             </div>
 
             <div>
@@ -228,7 +229,7 @@ function HomePage() {
 <section className="max-w-7xl mx-auto px-4 py-24">
   <div className="text-center mb-14">
     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-base-100/60 backdrop-blur-xl mb-6">
-      <SparklesIcon className="size-4 text-primary" />
+      <Aperture className="size-4 text-primary" />
       <span className="text-sm">Built for modern developers</span>
     </div>
 
