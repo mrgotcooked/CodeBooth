@@ -1,12 +1,12 @@
 import { Link } from "react-router";
-import Navbar from "../src/Components/Navbar";
-import { PROBLEMS } from "../src/Data/problems";
+import Navbar from "../Components/Navbar";
+import { PROBLEMS } from "../Data/problems";
 import {
   ChevronRightIcon,
   Code2Icon,
   SparklesIcon,
 } from "lucide-react";
-import { getDifficultyBadgeClass } from "../src/lib/utils";
+import { getDifficultyBadgeClass } from "../lib/utils";
 
 function ProblemsPage() {
   const problems = Object.values(PROBLEMS);
@@ -111,7 +111,7 @@ function ProblemsPage() {
           {problems.map((problem, index) => (
             <Link
               key={problem.id}
-              to={`/problem/${problem.id}`}
+              to={`/problems/${problem.id}`}
               className="
                 block
                 rounded-[2rem]
@@ -146,7 +146,7 @@ function ProblemsPage() {
                       <h2 className="text-xl font-bold">
                         {problem.title}
                       </h2>
-
+                      
                       <div className="flex items-center gap-2 mt-1">
 
                         <span
