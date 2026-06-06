@@ -87,7 +87,7 @@ function CodeEditorPanel({
       <img
         src={lang.icon}
         alt={lang.name}
-        className="size-4"
+        className="size-6"
       />
       <span className="text-sm font-medium">
         {lang.name}
