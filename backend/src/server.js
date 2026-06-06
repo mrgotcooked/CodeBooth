@@ -8,7 +8,8 @@ import { inngest,functions } from "./lib/inngest.js";
 import { chatClient } from "./lib/stream.js";
 import { clerkMiddleware } from "@clerk/express";
 import chatRoutes from "./routes/chatRoutes.js";
-import sessionRoutes from "./routes/sessionRoutes.js"
+import sessionRoutes from "./routes/sessionRoutes.js";
+import codeExecutionRoutes from "./routes/codeExecutionRoutes.js";
 const app = express();
 
 
@@ -17,6 +18,7 @@ app.use(cors({origin:ENV.CLIENT_URL,credentials:true}));
 //credentials?server allows browser to include cookies on request
 app.use(clerkMiddleware());//this add auth fields to request object: req.auth()
 app.use("/api/inngest",serve({client:inngest,functions}));
+app.use("/api/execute", codeExecutionRoutes);
 app.use("/api/chat",chatRoutes);
 app.use("/api/sessions",sessionRoutes);
 

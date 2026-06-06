@@ -7,8 +7,7 @@ import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import ProblemDescription from "../Components/ProblemDescription";
 import OutputPanel from "../Components/OutputPanel";
 import CodeEditorPanel from "../Components/CodeEditorPanel";
-// import { executeCode } from "../lib/piston";
-
+import { executeCode } from "../lib/jdoodle.js";
 import toast from "react-hot-toast";
 import confetti from "canvas-confetti";
 
@@ -93,6 +92,8 @@ function ProblemPage() {
 
     if (result.success) {
       const expectedOutput = currentProblem.expectedOutput[selectedLanguage];
+      console.log("Actual:", JSON.stringify(result.output));
+      console.log("Expected:", JSON.stringify(expectedOutput));
       const testsPassed = checkIfTestsPassed(result.output, expectedOutput);
 
       if (testsPassed) {
