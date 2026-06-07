@@ -495,12 +495,11 @@ function HomePage() {
     {/* Terminal Style */}
     <div className="bg-neutral text-neutral-content rounded-2xl p-4 font-mono text-sm">
       <div>$ language list</div>
-      <div className="text-success mt-2">
+      <div>
         JavaScript ✓
       </div>
       <div>Python ✓</div>
       <div>C++ ✓</div>
-      <div>Java ✓</div>
     </div>
   </div>
   <div className="rounded-[2rem] border border-base-content/10 bg-base-100/60 backdrop-blur-xl p-6 shadow-xl hover:border-accent/20 hover:-translate-y-1 transition-all duration-300">
