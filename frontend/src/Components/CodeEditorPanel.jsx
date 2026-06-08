@@ -33,13 +33,7 @@ function CodeEditorPanel({
         "
       >
         {/* LEFT */}
-        <div className="flex items-center gap-4">
-
-          {/* STATUS */}
-          <div className="hidden md:flex items-center gap-2 text-sm text-success">
-            <CircleDotIcon className="size-3 fill-current" />
-            <span>Ready</span>
-          </div>
+        <div className="flex items-center gap-4">   
 
           <div className="h-5 w-px bg-base-content/10 hidden md:block" />
 
