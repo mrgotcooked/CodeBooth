@@ -49,23 +49,7 @@ function OutputPanel({ output }) {
           </div>
         </div>
 
-        {/* STATUS */}
-        {output === null ? (
-          <div className="badge badge-outline gap-2">
-            <PlayCircleIcon className="size-3" />
-            Ready
-          </div>
-        ) : output.success ? (
-          <div className="badge badge-success gap-2">
-            <CheckCircle2Icon className="size-3" />
-            Success
-          </div>
-        ) : (
-          <div className="badge badge-error gap-2">
-            <XCircleIcon className="size-3" />
-            Failed
-          </div>
-        )}
+        
       </div>
 
       {/* BODY */}

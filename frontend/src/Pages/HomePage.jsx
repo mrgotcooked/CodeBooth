@@ -228,10 +228,6 @@ function HomePage() {
 {/* Feature Section */}
 <section className="max-w-7xl mx-auto px-4 py-24">
   <div className="text-center mb-14">
-    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-base-100/60 backdrop-blur-xl mb-6">
-      <Aperture className="size-4 text-primary" />
-      <span className="text-sm">Built for modern developers</span>
-    </div>
 
     <h2 className="text-4xl lg:text-5xl font-black tracking-tight">
       More than a
